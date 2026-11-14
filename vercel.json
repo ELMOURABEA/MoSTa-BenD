@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "app": {
+      "root": ".",
+      "framework": "vite"
+    },
+    "bendary": {
+      "root": "extracted/bendary",
+      "framework": "nextjs"
+    },
+    "mostachat": {
+      "root": "extracted/mostachat",
+      "runtime": "node"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "app"
+      }
+    }
+  ]
+}
